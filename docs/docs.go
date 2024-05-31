@@ -15,7 +15,7 @@ const docTemplate = `{
     "host": "{{.Host}}",
     "basePath": "{{.BasePath}}",
     "paths": {
-        "/listBins": {
+        "/listBins/{user_id}": {
             "get": {
                 "description": "List bins for a user with the given parameters",
                 "consumes": [
@@ -30,13 +30,11 @@ const docTemplate = `{
                 "summary": "List bins for a user",
                 "parameters": [
                     {
-                        "description": "Request Body",
-                        "name": "requestBody",
-                        "in": "body",
-                        "required": true,
-                        "schema": {
-                            "$ref": "#/definitions/main.ListBinParams"
-                        }
+                        "type": "string",
+                        "description": "User ID",
+                        "name": "user_id",
+                        "in": "path",
+                        "required": true
                     }
                 ],
                 "responses": {
@@ -71,14 +69,6 @@ const docTemplate = `{
                 },
                 "status_code": {
                     "type": "integer"
-                }
-            }
-        },
-        "main.ListBinParams": {
-            "type": "object",
-            "properties": {
-                "user_id": {
-                    "type": "string"
                 }
             }
         },
