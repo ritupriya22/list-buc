@@ -52,6 +52,10 @@ paths:
           description: Internal Server Error
           schema:
             $ref: '#/definitions/main.ErrorResponse'
+        "503":
+          description: Service Unavailable
+          schema:
+            type: string
       summary: List bins for a user
       tags:
       - bins
