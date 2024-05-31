@@ -1,4 +1,4 @@
-module main.go
+module github.com/ritupriya22/list-buc
 
 go 1.22.0
 
