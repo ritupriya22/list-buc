@@ -6,11 +6,6 @@ definitions:
       status_code:
         type: integer
     type: object
-  main.ListBinParams:
-    properties:
-      user_id:
-        type: string
-    type: object
   main.Resp:
     properties:
       response:
@@ -27,18 +22,17 @@ definitions:
 info:
   contact: {}
 paths:
-  /listBins:
+  /listBins/{user_id}:
     get:
       consumes:
       - application/json
       description: List bins for a user with the given parameters
       parameters:
-      - description: Request Body
-        in: body
-        name: requestBody
+      - description: User ID
+        in: path
+        name: user_id
         required: true
-        schema:
-          $ref: '#/definitions/main.ListBinParams'
+        type: string
       produces:
       - application/json
       responses:
