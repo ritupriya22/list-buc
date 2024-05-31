@@ -30,8 +30,8 @@ const docTemplate = `{
                 "summary": "List bins for a user",
                 "parameters": [
                     {
-                        "description": "ListBinParams",
-                        "name": "params",
+                        "description": "Request Body",
+                        "name": "requestBody",
                         "in": "body",
                         "required": true,
                         "schema": {
@@ -115,8 +115,8 @@ var SwaggerInfo = &swag.Spec{
 	Description:      "",
 	InfoInstanceName: "swagger",
 	SwaggerTemplate:  docTemplate,
-	//LeftDelim:        "{{",
-	//RightDelim:       "}}",
+	LeftDelim:        "{{",
+	RightDelim:       "}}",
 }
 
 func init() {
