@@ -19,8 +19,8 @@
                 "summary": "List bins for a user",
                 "parameters": [
                     {
-                        "description": "ListBinParams",
-                        "name": "params",
+                        "description": "Request Body",
+                        "name": "requestBody",
                         "in": "body",
                         "required": true,
                         "schema": {
