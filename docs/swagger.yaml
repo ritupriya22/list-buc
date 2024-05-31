@@ -33,9 +33,9 @@ paths:
       - application/json
       description: List bins for a user with the given parameters
       parameters:
-      - description: ListBinParams
+      - description: Request Body
         in: body
-        name: params
+        name: requestBody
         required: true
         schema:
           $ref: '#/definitions/main.ListBinParams'
