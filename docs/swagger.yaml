@@ -1,0 +1,60 @@
+definitions:
+  main.ErrorResponse:
+    properties:
+      error_description:
+        type: string
+      status_code:
+        type: integer
+    type: object
+  main.ListBinParams:
+    properties:
+      user_id:
+        type: string
+    type: object
+  main.Resp:
+    properties:
+      response:
+        properties:
+          data:
+            items:
+              additionalProperties: true
+              type: object
+            type: array
+          request_status:
+            type: string
+        type: object
+    type: object
+info:
+  contact: {}
+paths:
+  /listBins:
+    get:
+      consumes:
+      - application/json
+      description: List bins for a user with the given parameters
+      parameters:
+      - description: ListBinParams
+        in: body
+        name: params
+        required: true
+        schema:
+          $ref: '#/definitions/main.ListBinParams'
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/main.Resp'
+        "400":
+          description: Bad Request
+          schema:
+            $ref: '#/definitions/main.ErrorResponse'
+        "500":
+          description: Internal Server Error
+          schema:
+            $ref: '#/definitions/main.ErrorResponse'
+      summary: List bins for a user
+      tags:
+      - bins
+swagger: "2.0"
